@@ -44,5 +44,5 @@ def merlin():
 def products():
     return render_template("products.html")
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
+def handler(request, response):
+    return app.wsgi_app(request.environ, response)
